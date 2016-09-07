@@ -130,6 +130,14 @@ static void bpf_decode_op(const bpf_instr_raw *bpf)
 		case BPF_ALU+BPF_NEG+BPF_X:
 			printf(_OP_FMT, "neg");
 			break;
+		case BPF_ALU+BPF_MOD+BPF_K:
+		case BPF_ALU+BPF_MOD+BPF_X:
+			printf(_OP_FMT, "mod");
+			break;
+		case BPF_ALU+BPF_XOR+BPF_K:
+		case BPF_ALU+BPF_XOR+BPF_X:
+			printf(_OP_FMT, "xor");
+			break;
 		case BPF_JMP+BPF_JA+BPF_K:
 		case BPF_JMP+BPF_JA+BPF_X:
 			printf(_OP_FMT, "jmp");
